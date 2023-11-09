@@ -73,8 +73,9 @@ function removeToDoItem(todoId) {
       todoItems.splice(i, 1);
       break;
     } 
-    else if(todoItems[i].id !== todoId) {
-      console.log*("todo item not found.")
+    
+    if(typeof todoId !== 'number') {
+      console.log("Wrong input.")
     }
   }
 }
@@ -93,7 +94,7 @@ function markToDoItemAsCompleted(todoId) {
       break;
     } 
     else if(todoItems[i].id !== todoId) {
-      console.log*("todo item not found.")
+      console.log("todo item not found.")
     }
     
   }
