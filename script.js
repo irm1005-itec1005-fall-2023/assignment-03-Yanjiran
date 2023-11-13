@@ -45,6 +45,7 @@
 
 // Initialise an empty array with the variable name todoItems
 let todoItems = [];
+let idCounter = 0; 
 
 // Function to add a todo to the list
 // It should accept a string as a parameter (text of the todo item)
@@ -52,12 +53,14 @@ let todoItems = [];
 // the function does not need to return anything
 function addToDoItem(text) {
   let todoItem = {
-    id: todoItems.length, 
+    id: idCounter++,
     text: text, 
     completed: false,  
   }
+
   todoItems.push(todoItem);
 }
+
 addToDoItem(Homework);
 addToDoItem(Sleep);
 console.log("Added to do item.", todoItems);
@@ -81,6 +84,7 @@ function removeToDoItem(todoId) {
 }
 removeToDoItem(0);
 console.log("removed todoItems", todoItems);
+
 
 // Function to mark a task as completed
 // It should accept a number as a parameter (id of the todo item)
@@ -121,6 +125,7 @@ function deleteToDoItem(todoId) {
 }
 deleteToDoItem(1);
 console.log(todoItems);
+ 
 
 // Function to clear all completed tasks
 // Loop through the array of todos, and when you find a todo item that is marked
